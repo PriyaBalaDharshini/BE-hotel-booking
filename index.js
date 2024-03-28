@@ -15,6 +15,9 @@ app.use(express.json())
 app.use(cookieParser())
 const PORT = process.env.PORT;
 
+app.use("/", (req, res) => {
+    res.status(200).send({ message: "Welcome to Hotel Booking Backend" })
+})
 app.use("/auth", authRoutes)
 app.use("/hotel", hotelRoutes)
 app.use("/room", roomsRoutes)
